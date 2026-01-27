@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NWG 아트릭 | 45년 장인의 손길, 프리미엄 자동차 외장관리</title>
+    <meta name="description" content="1977년부터 이어온 도장 명장의 기술력. 듀폰 기술 제휴, 컬러매칭 시스템으로 당신의 차량에 새 생명을 불어넣습니다.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        /* ===== CSS Reset & Base ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background-color: #fafafa;
+        }
+        
+        /* ===== Typography ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif KR', serif;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-dark {
+            background: linear-gradient(180deg, #0d1b2a 0%, #1b263b 100%);
+            color: #ffffff;
+        }
+        
+        .section-light {
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        .section-cream {
+            background: linear-gradient(180deg, #faf8f5 0%, #f5f0eb 100%);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .gold-accent {
+            color: #c9a227;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a227;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: clamp(28px, 5vw, 42px);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-subtitle {
+            font-size: clamp(16px, 2.5vw, 18px);
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .section-dark .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Animation Classes with Fallback */
+        .fade-up, .fade-in {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(201, 162, 39, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #ffffff;
+            padding: 40px 24px;
+            max-width: 900px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 162, 39, 0.15);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #c9a227;
+            margin-bottom: 32px;
+        }
+        
+        .hero-title {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-title .highlight {
+            display: block;
+            color: #c9a227;
+        }
+        
+        .hero-description {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
+            color: #0d1b2a;
+            padding: 18px 40px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            color: #c9a227;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 8px;
+        }
+        
+        /* ===== Problem Section (PASONA - P) ===== */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+        
+        .problem-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        
+        .problem-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .problem-icon i {
+            font-size: 24px;
+            color: #c9a227;
+        }
+        
+        .problem-card h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .problem-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* ===== Affinity Section (PASONA - A) ===== */
+        .affinity-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .affinity-quote {
+            position: relative;
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            border-left: 4px solid #c9a227;
+            margin-top: 50px;
+        }
+        
+        .affinity-quote::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-family: 'Noto Serif KR', serif;
+            font-size: 80px;
+            color: rgba(201, 162, 39, 0.2);
+            line-height: 1;
+        }
+        
+        .affinity-quote p {
+            font-size: clamp(18px, 2.5vw, 22px);
+            line-height: 1.9;
+            color: rgba(255,255,255,0.9);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .affinity-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-avatar i {
+            font-size: 24px;
+            color: #0d1b2a;
+        }
+        
+        .author-info h5 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .author-info span {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* ===== Solution Section (PASONA - S) ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.12);
+        }
+        
+        .service-image {
+            height: 200px;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .service-image i {
+            font-size: 64px;
+            color: #c9a227;
+        }
+        
+        .service-content {
+            padding: 32px;
+        }
+        
+        .service-content h4 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .service-content p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #444;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features li i {
+            color: #c9a227;
+            font-size: 12px;
+        }
+        
+        /* ===== Technology Section ===== */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .tech-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.06);
+        }
+        
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        
+        .tech-icon i {
+            font-size: 32px;
+            color: #c9a227;
+        }
+        
+        .tech-card h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        
+        .tech-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+        
+        /* ===== Timeline Section ===== */
+        .timeline {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #c9a227 0%, rgba(201, 162, 39, 0.3) 100%);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            padding: 24px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        
+        .timeline-year {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #c9a227;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            background: #c9a227;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid #fafafa;
+        }
+        
+        /* ===== Testimonials Section ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .testimonial-rating i {
+            color: #c9a227;
+            font-size: 16px;
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1b263b 0%, #2d3a4f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Noto Serif KR', serif;
+            font-weight: 600;
+            color: #c9a227;
+        }
+        
+        .testimonial-info h5 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .testimonial-info span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(201, 162, 39, 0.1) 0%, transparent 60%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .cta-title {
+            font-size: clamp(28px, 5vw, 40px);
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
+            color: #0d1b2a;
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: #ffffff;
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        /* ===== Contact Section ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .contact-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-icon i {
+            font-size: 24px;
+            color: #c9a227;
+        }
+        
+        .contact-card h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .contact-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .contact-card a {
+            color: #c9a227;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* ===== FAQ Section ===== */
+        .faq-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .faq-question h4 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            padding-right: 20px;
+        }
+        
+        .faq-question i {
+            color: #c9a227;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            padding: 0 24px 24px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+        
+        /* ===== Footer ===== */
+        .footer {
+            background: #0a0f14;
+            color: rgba(255,255,255,0.6);
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+        
+        .footer-brand p {
+            font-size: 14px;
+            max-width: 300px;
+            line-height: 1.7;
+        }
+        
+        .footer-links h5 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #c9a227;
+        }
+        
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .section {
+                padding: 70px 0;
+            }
+            
+            .hero-stats {
+                gap: 24px;
+            }
+            
+            .stat-item {
+                min-width: 100px;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                flex-direction: row;
+                text-align: left;
+                padding-left: 50px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        /* ===== Sample Badge ===== */
+        .sample-notice {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(201, 162, 39, 0.95);
+            color: #0d1b2a;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-up">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                <span>Since 1977 · 45년 전통</span>
+            </div>
+            <h1 class="hero-title">
+                45년 장인의 손길,
+                <span class="highlight">당신의 차를 새차처럼</span>
+            </h1>
+            <p class="hero-description">
+                1977년부터 이어온 명장 기술로 외장 복원의 새로운 기준을 세웁니다.<br>
+                미국 듀폰 기술 제휴, 독자 개발 컬러매칭 시스템으로<br>
+                당신의 소중한 차량에 새 생명을 불어넣으세요.
+            </p>
+            <a href="https://tally.so" class="hero-cta" target="_blank">
+                <span>무료 상담 예약하기</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <div class="hero-stats">
+                <div class="stat-item fade-up">
+                    <div class="stat-number">45<span style="font-size: 24px;">년</span></div>
+                    <div class="stat-label">도장 전문 경력</div>
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="stat-number">1993</div>
+                    <div class="stat-label">듀폰 기술제휴</div>
+                </div>
+                <div class="stat-item fade-up">
+                    <div class="stat-number">1<span style="font-size: 24px;">급</span></div>
+                    <div class="stat-label">금속도장 기능장</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section (PASONA - P) -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">Problem</span>
+                <h2 class="section-title">이런 고민, 해보신 적 있으신가요?</h2>
+                <p class="section-subtitle">
+                    소중한 차량의 외관 손상, 더 이상 방치하면 더 큰 비용이 듭니다.
+                </p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h4>주차장 문콕, 작은 사고 자국</h4>
+                    <p>가볍게 생긴 스크래치와 찌그러짐, 그냥 두면 녹이 슬고 보기 흉해집니다. 새 차 같던 내 차가 점점 낡아 보이는 건 참을 수 없죠.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>색상이 안 맞는 부분 도색</h4>
+                    <p>어디서 수리했는데 유독 그 부분만 색이 달라 보인 적 있으신가요? 전문가가 아니면 컬러 매칭이 어렵습니다.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h4>세월에 빛바랜 광택</h4>
+                    <p>출고 당시의 윤기 있던 표면이 잔기스와 산화로 뿌옇게 변했습니다. 왁스만으로는 한계가 있습니다.</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>믿을 수 있는 곳을 찾기 어려움</h4>
+                    <p>수입차, 슈퍼카를 아무 데나 맡기기 불안합니다. 경력과 실력을 갖춘 진짜 전문가를 찾기가 쉽지 않죠.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affinity Section (PASONA - A) -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="affinity-content">
+                <div class="text-center fade-up">
+                    <span class="section-badge">Our Story</span>
+                    <h2 class="section-title">외장관리 45년 외길,<br>믿음으로 쌓아온 역사</h2>
+                </div>
+                <div class="affinity-quote fade-up">
+                    <p>
+                        "1977년, 저는 자동차 도장 한 길에 발을 들였습니다. 
+                        수십 년간 수천 대의 차량을 복원하며 깨달은 것이 있습니다. 
+                        차량 외관은 단순한 겉모습이 아니라, 그 차를 아끼는 주인의 마음이라는 것을.<br><br>
+                        그래서 저는 단 한 톨의 색상 오차도, 단 하나의 티끌도 용납하지 않습니다. 
+                        고객님의 차량이 출고 당시 그 순간으로 돌아갈 때까지, 
+                        45년의 기술과 정성을 모두 쏟아붓겠습니다."
+                    </p>
+                    <div class="affinity-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h5>NWG 아트릭 기술이사</h5>
+                            <span>금속도장 1급 기능장 · 도장 전문 핸드북 저자</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section (PASONA - S) - Services -->
+    <section class="section section-cream">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">Services</span>
+                <h2 class="section-title">명차를 위한 토탈 케어 서비스</h2>
+                <p class="section-subtitle">
+                    광택부터 컬러매치 도장까지, 차량 외장관리의 모든 서비스를 한 곳에서.<br>
+                    당신의 차종과 상태에 딱 맞춘 맞춤 케어를 받아보세요.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-image">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>외형복원</h4>
+                        <p>문콕, 긁힘, 찌그러짐 등 외관 손상을 판금도색으로 완벽하게 복원합니다.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 정밀 판금 작업</li>
+                            <li><i class="fas fa-check"></i> 듀폰 페인트 도색</li>
+                            <li><i class="fas fa-check"></i> 열처리 부스 건조</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-image">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>프리미엄 광택</h4>
+                        <p>전문가용 연마 기술로 잔기스를 제거하고 새 차 같은 광택을 구현합니다.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 다단계 폴리싱</li>
+                            <li><i class="fas fa-check"></i> 스월마크 제거</li>
+                            <li><i class="fas fa-check"></i> 딥 샤인 마감</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>유리막 코팅</h4>
+                        <p>페인트 보호를 위한 프리미엄 유리막 코팅으로 장기간 광택을 유지합니다.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 9H 세라믹 코팅</li>
+                            <li><i class="fas fa-check"></i> 발수 코팅</li>
+                            <li><i class="fas fa-check"></i> UV 차단 보호막</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>칼라매치 도장</h4>
+                        <p>듀폰 기술 제휴 컬러매칭 시스템으로 색차 없는 완벽한 도색을 제공합니다.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 정밀 색상 분석</li>
+                            <li><i class="fas fa-check"></i> 공장 출고색 복원</li>
+                            <li><i class="fas fa-check"></i> 특수색상 조색</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-image">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>덴트복원 (PDR)</h4>
+                        <p>도색 없이 움푹 파인 손상을 복원하는 비용 효율적인 기술입니다.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 무도장 복원</li>
+                            <li><i class="fas fa-check"></i> 원본 페인트 보존</li>
+                            <li><i class="fas fa-check"></i> 당일 시공 가능</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="service-content">
+                        <h4>올인원 패키지</h4>
+                        <p>복원+광택+코팅을 한 번에. 토탈 케어로 새 차의 감동을 경험하세요.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> 맞춤 패키지 구성</li>
+                            <li><i class="fas fa-check"></i> 비용 절감 효과</li>
+                            <li><i class="fas fa-check"></i> A/S 보증</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">Technology</span>
+                <h2 class="section-title">차이가 느껴지는 전문 기술력</h2>
+                <p class="section-subtitle">
+                    미국 듀폰사의 기술 인증과 1급 도장 기능장이 이끄는 작업으로<br>
+                    결과부터 다릅니다.
+                </p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card fade-up">
+                    <div class="tech-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>듀폰 기술 제휴</h4>
+                    <p>1993년 미국 듀폰社와 공식 기술 제휴를 맺고 독자적인 컬러매칭 페인트 시스템을 발전시켜왔습니다.</p>
+                </div>
+                <div class="tech-card fade-up">
+                    <div class="tech-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>1급 기능장 보유</h4>
+                    <p>국가공인 금속도장 1급 기능장이 직접 작업을 총괄합니다. 자격시험 출제위원 경력의 진정한 전문가입니다.</p>
+                </div>
+                <div class="tech-card fade-up">
+                    <div class="tech-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h4>최신 전문 장비</h4>
+                    <p>열처리 부스, 정밀 광택 기계, 데빌비스 고급 도장 공구 등 프리미엄 장비를 갖추고 있습니다.</p>
+                </div>
+                <div class="tech-card fade-up">
+                    <div class="tech-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>친환경 도료</h4>
+                    <p>국내 최초로 친환경 도료를 도입했습니다. 환경과 고객의 건강까지 생각하는 작업 환경입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">History</span>
+                <h2 class="section-title">45년의 발자취</h2>
+                <p class="section-subtitle">
+                    한결같이 외장관리 한 우물만 파온 NWG 아트릭의 역사
+                </p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1977</div>
+                        <h5>자동차 도장 입문</h5>
+                        <p>기술이사, 자동차 도장 분야에 첫 발을 내딛다</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1980년대 후반</div>
+                        <h5>자체 외장관리 사업 창업</h5>
+                        <p>축적된 기술력을 바탕으로 독립 사업 시작</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1993</div>
+                        <h5>미국 듀폰社 기술 제휴</h5>
+                        <p>세계적 도료 기업과 공식 파트너십 체결</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1990년대</div>
+                        <h5>국내 최초 친환경 도료 도입</h5>
+                        <p>데빌비스 도장 시스템 도입, 금속도장 1급 취득</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="timeline-content">
+                        <div class="timeline-year">현재</div>
+                        <h5>NWG 아트릭</h5>
+                        <p>서울 강남 개포동에서 프리미엄 외장관리 서비스 제공</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">Reviews</span>
+                <h2 class="section-title">고객이 말하는 믿음의 품질</h2>
+                <p class="section-subtitle">
+                    소중한 차량을 맡긴 고객들의 생생한 후기
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "마치 새 차를 인도받은 기분입니다. 다른 곳에서 수리한 부분의 색상 차이가 너무 신경 쓰였는데, 
+                        여기서 전체 광택과 함께 보정 받으니 출고 당시 그대로 돌아왔어요."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">K</div>
+                        <div class="testimonial-info">
+                            <h5>김○○ 님</h5>
+                            <span>BMW 7시리즈 오너</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "수입차라 아무 데나 맡기기 불안했는데, 45년 경력의 기능장님이 직접 봐주시니 안심이 됩니다. 
+                        작업 후 친절한 관리 안내까지, 진정한 프리미엄 서비스입니다."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <h5>박○○ 님</h5>
+                            <span>Mercedes-Benz S클래스 오너</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "컬러매칭 도장의 품질이 정말 놀랍습니다. 수리한 부분을 찾을 수가 없어요. 
+                        듀폰 기술 제휴가 괜히 있는 게 아니라는 걸 느꼈습니다."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L</div>
+                        <div class="testimonial-info">
+                            <h5>이○○ 님</h5>
+                            <span>Porsche 911 오너</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-dark" style="padding-top: 0;">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">자주 묻는 질문</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <h4>작업 기간은 얼마나 걸리나요?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>작업 범위에 따라 다르지만, 일반적인 부분 도색은 2~3일, 전체 광택+코팅은 1~2일, 
+                        올인원 패키지는 3~5일 정도 소요됩니다. 정확한 기간은 차량 상태 진단 후 안내드립니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <h4>수입차, 슈퍼카도 작업 가능한가요?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>물론입니다. 45년간 수많은 고급 수입차와 슈퍼카를 다뤄왔습니다. 
+                        듀폰 컬러매칭 시스템으로 특수 색상도 정확하게 복원이 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <h4>가격은 어떻게 되나요?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>차량 종류, 손상 정도, 작업 범위에 따라 달라집니다. 
+                        정확한 견적은 무료 상담을 통해 차량 상태를 확인한 후 투명하게 안내드립니다.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <h4>A/S 보증이 있나요?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 모든 작업에 대해 A/S 보증을 제공합니다. 
+                        작업 범위와 종류에 따라 보증 기간이 다르며, 상담 시 상세히 안내드립니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (PASONA - N & A) -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-up">
+                <span class="section-badge">Contact Us</span>
+                <h2 class="cta-title">당신의 차, 새로운 출발을 준비하십시오</h2>
+                <p class="cta-description">
+                    지금 전문 상담을 예약하시고 차량 외장관리의 격이 다른 서비스를 경험해보세요.<br>
+                    서울 강남 개포동에서 고객님을 맞이합니다.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://tally.so" class="btn-primary" target="_blank">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>온라인 상담 예약 (샘플)</span>
+                    </a>
+                    <a href="tel:02-0000-0000" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>전화 상담하기</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="text-center fade-up">
+                <span class="section-badge">Visit Us</span>
+                <h2 class="section-title">방문 안내</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card fade-up">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>위치</h4>
+                    <p>서울특별시 강남구 개포동<br>(상세 주소는 상담 시 안내)</p>
+                </div>
+                <div class="contact-card fade-up">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>운영시간</h4>
+                    <p>평일 09:00 ~ 18:00<br>토요일 09:00 ~ 15:00 (일요일 휴무)</p>
+                </div>
+                <div class="contact-card fade-up">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>연락처</h4>
+                    <p>전화: <a href="tel:02-0000-0000">02-0000-0000</a><br>카카오톡: @NWG아트릭 (샘플)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>NWG 아트릭</h3>
+                    <p>1977년부터 이어온 45년 전통의 자동차 외장관리 전문 브랜드. 
+                    장인의 기술력으로 당신의 차량에 새 생명을 불어넣습니다.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>서비스</h5>
+                    <ul>
+                        <li><a href="#services">외형복원</a></li>
+                        <li><a href="#services">프리미엄 광택</a></li>
+                        <li><a href="#services">유리막 코팅</a></li>
+                        <li><a href="#services">칼라매치 도장</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>고객센터</h5>
+                    <ul>
+                        <li><a href="https://tally.so" target="_blank">상담 예약</a></li>
+                        <li><a href="#faq">자주 묻는 질문</a></li>
+                        <li><a href="#contact">오시는 길</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 NWG 아트릭. All Rights Reserved. | 본 페이지는 샘플입니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sample Notice -->
+    <div class="sample-notice">
+        📋 영업용 샘플 페이지
+    </div>
+
+    <script>
+        // GSAP Fallback - Ensure content is always visible
+        document.querySelectorAll('.fade-up, .fade-in').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.visibility = 'visible';
+        });
+
+        // Initialize GSAP only if available
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Safe animation setup with try-catch
+            try {
+                // Hero animations
+                gsap.fromTo('.hero-content .hero-badge', 
+                    { opacity: 0, y: 30 },
+                    { opacity: 1, y: 0, duration: 0.8, delay: 0.2 }
+                );
+                
+                gsap.fromTo('.hero-content .hero-title', 
+                    { opacity: 0, y: 30 },
+                    { opacity: 1, y: 0, duration: 0.8, delay: 0.4 }
+                );
+                
+                gsap.fromTo('.hero-content .hero-description', 
+                    { opacity: 0, y: 30 },
+                    { opacity: 1, y: 0, duration: 0.8, delay: 0.6 }
+                );
+                
+                gsap.fromTo('.hero-content .hero-cta', 
+                    { opacity: 0, y: 30 },
+                    { opacity: 1, y: 0, duration: 0.8, delay: 0.8 }
+                );
+                
+                gsap.fromTo('.hero-stats .stat-item', 
+                    { opacity: 0, y: 20 },
+                    { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, delay: 1 }
+                );
+
+                // Scroll-triggered animations
+                const fadeUpElements = document.querySelectorAll('.section .fade-up');
+                fadeUpElements.forEach(el => {
+                    gsap.fromTo(el,
+                        { opacity: 0, y: 40 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: el,
+                                start: 'top 85%',
+                                once: true
+                            }
+                        }
+                    );
+                });
+            } catch (e) {
+                console.log('Animation error, showing content statically');
+                document.querySelectorAll('.fade-up, .fade-in').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
