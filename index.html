@@ -18,6 +18,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
+    <!-- Tally Popup -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    
     <style>
         /* ===== CSS Reset & Base ===== */
         *, *::before, *::after {
@@ -187,6 +190,28 @@
             line-height: 1.8;
         }
         
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
+            color: #0d1b2a;
+            padding: 18px 36px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+        }
+        
         .hero-cta {
             display: inline-flex;
             align-items: center;
@@ -199,6 +224,9 @@
             font-weight: 600;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Noto Sans KR', sans-serif;
         }
         
         .hero-cta:hover {
@@ -656,25 +684,6 @@
             flex-wrap: wrap;
         }
         
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
-            color: #0d1b2a;
-            padding: 18px 36px;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
-        }
-        
         .btn-secondary {
             display: inline-flex;
             align-items: center;
@@ -957,10 +966,10 @@
                 미국 듀폰 기술 제휴, 독자 개발 컬러매칭 시스템으로<br>
                 당신의 소중한 차량에 새 생명을 불어넣으세요.
             </p>
-            <a href="https://tally.so" class="hero-cta" target="_blank">
-                <span>무료 상담 예약하기</span>
+            <button class="hero-cta" data-tally-open="LZPqzj" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                <span>무료 견적받기</span>
                 <i class="fas fa-arrow-right"></i>
-            </a>
+            </button>
             <div class="hero-stats">
                 <div class="stat-item fade-up">
                     <div class="stat-number">45<span style="font-size: 24px;">년</span></div>
@@ -1148,6 +1157,14 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Mid-page CTA -->
+            <div class="text-center" style="margin-top: 60px;">
+                <button class="btn-primary" data-tally-open="LZPqzj" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                    <i class="fas fa-file-alt"></i>
+                    <span>무료 견적받기</span>
+                </button>
             </div>
         </div>
     </section>
@@ -1389,10 +1406,10 @@
                     서울 강남 개포동에서 고객님을 맞이합니다.
                 </p>
                 <div class="cta-buttons">
-                    <a href="https://tally.so" class="btn-primary" target="_blank">
-                        <i class="fas fa-calendar-check"></i>
-                        <span>온라인 상담 예약 (샘플)</span>
-                    </a>
+                    <button class="btn-primary" data-tally-open="LZPqzj" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
+                        <i class="fas fa-file-alt"></i>
+                        <span>무료 견적받기</span>
+                    </button>
                     <a href="tel:02-0000-0000" class="btn-secondary">
                         <i class="fas fa-phone"></i>
                         <span>전화 상담하기</span>
