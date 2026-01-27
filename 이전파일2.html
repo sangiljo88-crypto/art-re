@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NWG Art-Re | 수입차 복원의 예술, 아트리</title>
-    <meta name="description" content="Art + Restore = Art-Re. 47년간 16만대 복원. 수입차 복원을 예술의 경지로. 센터에서 실패한 차량이 마지막으로 오는 곳.">
+    <meta name="description" content="Art + Restore = Art-Re. 45년간 16만대 복원. 수입차 복원을 예술의 경지로. 센터에서 실패한 차량이 마지막으로 오는 곳.">
     
     <!-- Google Fonts - Playfair Display 추가 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,123 +31,6 @@
             --navy-light: #1b263b;
             --cream: #f8f5f0;
             --cream-dark: #ebe5db;
-        }
-        
-        /* ===== Navigation Bar ===== */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(10, 14, 20, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.15);
-            transition: all 0.3s ease;
-        }
-        
-        nav.scrolled {
-            background: rgba(10, 14, 20, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 600;
-            color: #ffffff;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-        
-        .nav-logo span {
-            color: var(--gold);
-            font-style: italic;
-        }
-        
-        .nav-contact {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .nav-phone {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 10px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-phone:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-        
-        .nav-phone i {
-            font-size: 14px;
-        }
-        
-        .nav-cta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gold);
-            color: var(--navy-deep);
-            font-size: 14px;
-            font-weight: 600;
-            padding: 12px 22px;
-            border: none;
-            border-radius: 0;
-            cursor: pointer;
-            font-family: 'Noto Sans KR', sans-serif;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-cta:hover {
-            background: var(--gold-light);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
-        }
-        
-        @media (max-width: 600px) {
-            .nav-container {
-                padding: 12px 16px;
-            }
-            
-            .nav-logo {
-                font-size: 20px;
-            }
-            
-            .nav-phone {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-            
-            .nav-phone span {
-                display: none;
-            }
-            
-            .nav-cta {
-                padding: 10px 16px;
-                font-size: 12px;
-            }
         }
         
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -206,8 +89,7 @@
             align-items: center; 
             justify-content: center; 
             background: var(--navy-deep);
-            overflow: hidden;
-            padding-top: 70px; /* 네비게이션 바 높이 */
+            overflow: hidden; 
         }
         
         /* Animated Background - Brushstroke Effect */
@@ -557,342 +439,6 @@
             color: var(--gold);
             letter-spacing: 3px;
             text-transform: uppercase;
-        }
-        
-        /* ===== FOUNDER Section - 대표 소개 ===== */
-        .founder-section {
-            padding: 140px 0;
-            background: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .founder-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.3), transparent);
-        }
-        
-        .founder-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .founder-image-wrapper {
-            position: relative;
-        }
-        
-        .founder-image {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .founder-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(20%);
-            transition: filter 0.5s ease;
-        }
-        
-        .founder-image:hover img {
-            filter: grayscale(0%);
-        }
-        
-        .founder-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(10, 14, 20, 0.3), transparent);
-            pointer-events: none;
-        }
-        
-        .founder-frame {
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: 15px;
-            bottom: 15px;
-            border: 1px solid var(--gold);
-            pointer-events: none;
-            opacity: 0.5;
-        }
-        
-        .founder-text h2 {
-            font-size: clamp(28px, 4vw, 40px);
-            color: var(--navy);
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-        
-        .founder-name {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(20px, 3vw, 28px);
-            font-style: italic;
-            color: var(--gold);
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .founder-name::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--gold), transparent);
-            max-width: 100px;
-        }
-        
-        .founder-credentials {
-            list-style: none;
-            margin-bottom: 32px;
-            padding-left: 0;
-        }
-        
-        .founder-credentials li {
-            font-size: 15px;
-            color: #444;
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        
-        .founder-credentials li::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        
-        .founder-credentials li:last-child {
-            border-bottom: none;
-        }
-        
-        .founder-description {
-            font-size: 15px;
-            color: #555;
-            line-height: 1.9;
-            padding: 28px;
-            background: var(--cream);
-            border-left: 3px solid var(--gold);
-            position: relative;
-        }
-        
-        .founder-description strong {
-            color: var(--navy);
-            font-weight: 600;
-        }
-        
-        @media (max-width: 900px) {
-            .founder-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            
-            .founder-image-wrapper {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-            
-            .founder-frame {
-                top: -10px;
-                left: -10px;
-                right: 10px;
-                bottom: 10px;
-            }
-        }
-        
-        /* ===== HISTORY Timeline Section ===== */
-        .history-section {
-            padding: 140px 0;
-            background: var(--navy);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .history-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 30%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(201, 162, 39, 0.05) 0%, transparent 50%);
-        }
-        
-        .history-section .section-title { color: #ffffff; }
-        .history-section .section-subtitle { color: rgba(255,255,255,0.6); }
-        
-        .timeline {
-            max-width: 900px;
-            margin: 80px auto 0;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--gold), rgba(201, 162, 39, 0.3), transparent);
-            transform: translateX(-50%);
-        }
-        
-        /* 타임라인 현재 박스 이후 선 가리기 */
-        .timeline-current {
-            text-align: center;
-            margin-top: 60px;
-            padding: 40px;
-            background: var(--navy);
-            border: 1px solid rgba(201, 162, 39, 0.3);
-            position: relative;
-            z-index: 3;
-        }
-        
-        .timeline-current::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: -60px;
-            width: 2px;
-            height: 60px;
-            background: linear-gradient(to bottom, rgba(201, 162, 39, 0.3), var(--gold));
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            width: 100%;
-            display: flex;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            justify-content: flex-start;
-        }
-        
-        .timeline-item:nth-child(even) {
-            justify-content: flex-end;
-        }
-        
-        .timeline-content {
-            width: calc(50% - 40px);
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 28px 32px;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            text-align: right;
-            margin-right: 40px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            text-align: left;
-            margin-left: 40px;
-        }
-        
-        .timeline-content:hover {
-            background: rgba(255,255,255,0.06);
-            transform: translateY(-5px);
-            border-color: rgba(201, 162, 39, 0.3);
-        }
-        
-        .timeline-year {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-        
-        .timeline-description {
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.7;
-        }
-        
-        .timeline-description strong {
-            color: #ffffff;
-            font-weight: 500;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 30px;
-            transform: translateX(-50%);
-            width: 16px;
-            height: 16px;
-            background: var(--gold);
-            border-radius: 50%;
-            border: 3px solid var(--navy);
-            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.3);
-            z-index: 2;
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-item:hover .timeline-dot {
-            transform: translateX(-50%) scale(1.3);
-            box-shadow: 0 0 0 5px rgba(201, 162, 39, 0.4);
-        }
-        
-        .timeline-current .timeline-year {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-        
-        .timeline-current .timeline-description {
-            font-size: 16px;
-            color: rgba(255,255,255,0.85);
-        }
-        
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-item,
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                justify-content: flex-start;
-            }
-            
-            .timeline-content,
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                width: calc(100% - 60px);
-                margin-left: 50px;
-                margin-right: 0;
-                text-align: left;
-            }
-            
-            .timeline-dot {
-                left: 20px;
-            }
         }
         
         /* ===== VILLAIN Section ===== */
@@ -1524,22 +1070,6 @@
     </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">ART<span>-RE</span></a>
-            <div class="nav-contact">
-                <a href="tel:010-8928-7233" class="nav-phone">
-                    <i class="fas fa-phone"></i>
-                    <span>010-8928-7233</span>
-                </a>
-                <button class="nav-cta" data-tally-open="LZPqzj" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
-                    무료 상담 신청
-                </button>
-            </div>
-        </div>
-    </nav>
-
     <!-- HERO -->
     <section class="hero">
         <div class="hero-bg"></div>
@@ -1564,7 +1094,7 @@
                 센터에서 실패한 차량이<br><span class="highlight">마지막으로 오는 곳</span>
             </h2>
             
-            <p class="hero-subtitle fade-up">47년간 쌓아온 기록. 실험이 아닌, 검증된 선택.</p>
+            <p class="hero-subtitle fade-up">45년간 쌓아온 기록. 실험이 아닌, 검증된 선택.</p>
             
             <div class="restoration-counter fade-up">
                 <div class="counter-corner tl"></div>
@@ -1601,128 +1131,6 @@
                     잃어버린 아름다움을 되찾아드립니다.
                 </p>
                 <p class="philosophy-author">NWG Art-Re 기술 철학</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOUNDER 대표 소개 -->
-    <section class="founder-section">
-        <div class="container">
-            <div class="founder-grid">
-                <div class="founder-image-wrapper fade-up">
-                    <div class="founder-image">
-                        <img src="https://i.ibb.co/cSWW5qTd/image.png" alt="복원예술가 엄준식 대표">
-                    </div>
-                    <div class="founder-frame"></div>
-                </div>
-                <div class="founder-text fade-up">
-                    <h2>47년간 한 길만 걸어온<br>복원의 장인을 소개합니다</h2>
-                    <div class="founder-name">복원예술가 엄준식</div>
-                    <ul class="founder-credentials">
-                        <li>1977년 세한자동차 도장부 입사, 47년 경력</li>
-                        <li>금속도장 1급 기능장 자격 보유 (1999)</li>
-                        <li>美 듀폰社 공식 기술 제휴 (1993~)</li>
-                        <li>'도장 실무 핸드북' 저서 출판</li>
-                        <li>금속도정 국가 자격 문제 출제위원 역임</li>
-                        <li>누적 162,000대+ 수입차·슈퍼카 복원</li>
-                    </ul>
-                    <p class="founder-description">
-                        1977년, 세한자동차 부평공장 도장부에서 시작된 47년의 여정.<br><br>
-                        저는 단순히 도장을 하는 것이 아니라 <strong>'색의 재현'</strong>을 합니다. 
-                        1993년 듀폰社와의 기술 제휴 이후, 컬러매칭의 정밀함을 추구하며 
-                        차량 한 대 한 대를 작품처럼 대해왔습니다.<br><br>
-                        센터에서 '정상 범위'라며 돌려보낸 차량들, 동네 업체에서 색이 안 맞아 다시 찾아오는 차량들. 
-                        47년간 그 차량들의 <strong>마지막 정착지</strong>가 되어왔습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HISTORY Timeline -->
-    <section class="history-section">
-        <div class="container">
-            <div class="text-center fade-up">
-                <span class="section-badge">History</span>
-                <h2 class="section-title">47년의 기술력, 숫자가 아닌 증명</h2>
-                <p class="section-subtitle">1977년 세한자동차 도장부에서 시작된 기술이<br>오늘날 수입차 복원의 기준이 되기까지</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1977</div>
-                        <div class="timeline-description">
-                            <strong>세한자동차 부평공장</strong> 도장부 입사<br>
-                            자동차 도장 기술의 시작
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-                
-                <div class="timeline-item fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1987</div>
-                        <div class="timeline-description">
-                            <strong>한국자동차 PAINT 대리점</strong> 개설<br>
-                            독립 창업 및 본사 운영 시작
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-                
-                <div class="timeline-item fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1993</div>
-                        <div class="timeline-description">
-                            <strong>美 듀폰社 공식 계약체결</strong><br>
-                            인천·부천지역 공식 대리점장
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-                
-                <div class="timeline-item fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1996</div>
-                        <div class="timeline-description">
-                            <strong>강남현대, SAG 정비공장</strong> 도장 20년 경력<br>
-                            고급 수입차 전문 기술 축적
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-                
-                <div class="timeline-item fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1999</div>
-                        <div class="timeline-description">
-                            <strong>금속도장 1급 자격증</strong> 취득<br>
-                            '도장 실무 핸드북' 저서 펴냄
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-                
-                <div class="timeline-item fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2003</div>
-                        <div class="timeline-description">
-                            <strong>듀폰 쎈타리 칼라시스템</strong> 본사 설립<br>
-                            컬러매칭 전문 기술 확보
-                        </div>
-                    </div>
-                    <div class="timeline-dot"></div>
-                </div>
-                
-                <div class="timeline-current fade-up">
-                    <div class="timeline-year">2004 ~ 현재</div>
-                    <div class="timeline-description">
-                        <strong>서초구 양재동 99번지 아트릭 NWG</strong> 운영<br>
-                        수입차 복원 전문 · 47년 경력의 집대성<br>
-                        누적 162,000대+ 복원 · 현재 진행형
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1806,7 +1214,7 @@
             <div class="text-center fade-up">
                 <span class="section-badge">The Art-Re Difference</span>
                 <h2 class="section-title" style="color: #fff;">복원이 아니라, 원형의 재현입니다</h2>
-                <p class="section-subtitle">47년간 색이 안 맞는 복원을 수없이 다시 고쳐왔습니다.<br>그래서 압니다. 무엇이 진짜 복원인지.</p>
+                <p class="section-subtitle">45년간 색이 안 맞는 복원을 수없이 다시 고쳐왔습니다.<br>그래서 압니다. 무엇이 진짜 복원인지.</p>
             </div>
             <div class="difference-grid">
                 <div class="difference-card fade-up">
@@ -1948,7 +1356,7 @@
                     <button class="btn-primary" data-tally-open="LZPqzj" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">
                         <i class="fas fa-car"></i><span>내 차 복원 가능 여부 확인</span>
                     </button>
-                    <a href="tel:010-8928-7233" class="btn-secondary"><i class="fas fa-phone"></i><span>전화 문의</span></a>
+                    <a href="tel:02-0000-0000" class="btn-secondary"><i class="fas fa-phone"></i><span>전화 문의</span></a>
                 </div>
                 <div class="cta-assurance">
                     <div class="assurance-item"><i class="fas fa-check"></i><span>상담 후 강요 없음</span></div>
@@ -1977,11 +1385,11 @@
                 </div>
                 <div class="faq-item fade-up">
                     <div class="faq-question"><h4>색이 안 맞으면 어떻게 되나요?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>47년간 색 이색으로 재작업한 경험이 거의 없습니다만, 만약 발생 시 무상으로 재복원해드립니다.</p></div>
+                    <div class="faq-answer"><p>45년간 색 이색으로 재작업한 경험이 거의 없습니다만, 만약 발생 시 무상으로 재복원해드립니다.</p></div>
                 </div>
                 <div class="faq-item fade-up">
                     <div class="faq-question"><h4>수입차, 슈퍼카도 가능한가요?</h4><i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer"><p>오히려 전문입니다. 페라리, 람보르기니, 포르쉐, 벤틀리 등 47년간 수천 대의 고급 수입차를 복원해왔습니다.</p></div>
+                    <div class="faq-answer"><p>오히려 전문입니다. 페라리, 람보르기니, 포르쉐, 벤틀리 등 45년간 수천 대의 고급 수입차를 복원해왔습니다.</p></div>
                 </div>
                 <div class="faq-item fade-up">
                     <div class="faq-question"><h4>보험 처리 가능한가요?</h4><i class="fas fa-chevron-down"></i></div>
@@ -2012,7 +1420,7 @@
                 <div class="contact-card fade-up">
                     <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
                     <h4>연락처</h4>
-                    <p>전화: <a href="tel:010-8928-7233">010-8928-7233</a><br>카카오톡: @아트리</p>
+                    <p>전화: <a href="tel:02-0000-0000">02-0000-0000</a><br>카카오톡: @NWG아트리</p>
                 </div>
             </div>
         </div>
@@ -2024,12 +1432,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>ART-RE</h3>
-                    <p>Art + Restore. 수입차 복원의 예술.<br>센터에서 실패한 차량이 마지막으로 오는 곳.</p>
-                    <div style="margin-top: 20px;">
-                        <a href="tel:010-8928-7233" style="display: inline-flex; align-items: center; gap: 8px; color: var(--gold); text-decoration: none; font-weight: 500;">
-                            <i class="fas fa-phone"></i> 010-8928-7233
-                        </a>
-                    </div>
+                    <p>Art + Restore. 1977년부터 이어온 수입차 복원의 예술. 센터에서 실패한 차량이 마지막으로 오는 곳.</p>
                 </div>
                 <div class="footer-links">
                     <h5>Restoration</h5>
@@ -2050,12 +1453,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div style="margin-bottom: 16px; font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8;">
-                    <p>상호: 아트리 | 대표: 엄준식 | 사업자등록번호: 202-14-77873</p>
-                    <p>주소: 서울특별시 강남구 논현로8길 31, 102호 (개포동)</p>
-                    <p>연락처: 010-8928-7233</p>
-                </div>
-                <p>© 2024 아트리 (Art-Re). All Rights Reserved.</p>
+                <p>© 2024 NWG Art-Re. All Rights Reserved. | 본 페이지는 샘플입니다.</p>
             </div>
         </div>
     </footer>
@@ -2195,16 +1593,6 @@
                 document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
                 if (!active) item.classList.add('active');
             });
-        });
-
-        // ===== Navigation Scroll Effect =====
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
         });
 
         // ===== Smooth Scroll =====
